@@ -10,3 +10,12 @@ header{
 		color:white;
 		font-size:xx-large;
 	}
+input:focus{
+	background:#eaeaea;
+}
+input:required{
+	background-color:lightyellow;
+}
+input:required:invalid{
+	background-color:#564556;
+}
