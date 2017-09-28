@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>jQuery Study</title>
+		
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$('<input type="button" value="第1个按钮" /><input type="button" value="第2个按钮" /><input type="button" value="删除按钮事件处理函数" /><input type="button" value="隐藏或显示文本" />').appendTo($('body'));
+				$('input[type="button"]').eq(0).click(function(){
+					alert('是第1个按钮的事件处理函数');
+				}).end().eq(1).click(function(){
+					$('input[type="button"]:eq(0)').trigger('click');
+				}).end().eq(2).click(function(){
+					$('input[type="button"]:eq(0)').unbind('click');
+				}).end().eq(3).toggle(function(){
+					$('.panel').hide('slow');
+				},function(){
+					$('.panel').show('slow');
+				});
+				$('input[type="button"]').eq(0).val("修改按钮名称").addClass("red");
+			});
+		</script>
+		<style tyep="text/css" >
+			.red{
+				color: red;
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="panel">
+			jQuery 链式语法演示
+		</div>
+	</body>
+</html>
