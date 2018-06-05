@@ -7,7 +7,12 @@
 	<body>
 		<h1>My web </h1>
 		<p id="demo">一个段落</p>
+		<p id="demoTime">此处显示时间</p>
+		<p id="demoDay">此处显示星期几</p>
 		<button type="button" onclick="myFunction()">点击一下</button>
+		<button type="button" onclick="getElementById('demoTime').innerHTML=Date()">What's the time?</button>
+		<button type="button" onclick="this.innerHTML=Date()">What is the time?</button>
+		<button type="button" onclick="getDay()">What's the day today?</button>
 		<script type="text/javascript">
 			// window.alert(5 + 6);
 			// document.write(Date());
@@ -24,6 +29,26 @@
 				}
 			};
 			document.getElementById("demo").innerHTML = person.fullName();
+			var d = new Date().getDay();
+			switch(d){
+				case 0:x="Sunday";
+				break;
+				case 1:x="Monday";
+				break;
+				case 2:x="Tuesday";
+				break;
+				case 3:x="Wednesday";
+				break;
+				case 4:x="Thursday";
+				break;
+				case 5:x="Friday";
+				break;
+				case 6:x="Saturday";
+				break;
+			}
+			function getDay(){
+				document.getElementById("demoDay").innerHTML = x;
+			}
 		</script>
 	</body>
 </html>
