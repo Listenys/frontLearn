@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript3</title>
+		<script type="text/javascript" src="js/learnjs.js"></script>
+	</head>
+	<body>
+		<h1>My web </h1>
+		<p id="demo">一个段落</p>
+		<button type="button" onclick="myFunction()">点击一下</button>
+		<script type="text/javascript">
+			// window.alert(5 + 6);
+			// document.write(Date());
+			// a = 5;
+			// b = 6;
+			// c = a + b;
+			// console.log(c);
+			var person = {
+				firstName : "John",
+				lastName : "Doe",
+				id : 5566,
+				fullName : function(){
+					return this.firstName + " " + this.lastName;
+				}
+			};
+			document.getElementById("demo").innerHTML = person.fullName();
+		</script>
+	</body>
+</html>
