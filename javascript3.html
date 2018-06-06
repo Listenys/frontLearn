@@ -13,6 +13,14 @@
 		<button type="button" onclick="getElementById('demoTime').innerHTML=Date()">What's the time?</button>
 		<button type="button" onclick="this.innerHTML=Date()">What is the time?</button>
 		<button type="button" onclick="getDay()">What's the day today?</button>
+		<!-- <form name="myForm" action="demo_form.php" onsubmit="return validateForm()" method="post">
+			名字：<input type="text" name="fname" required="required">
+			<input type="submit" value="提交">
+		</form> -->
+		<form name="myForm" action="demo_form.php" onsubmit="return validateForm();" method="post">
+			邮箱：<input type="text" name="email">
+			<input type="submit" value="提交">
+		</form>
 		<script type="text/javascript">
 			// window.alert(5 + 6);
 			// document.write(Date());
@@ -48,6 +56,22 @@
 			}
 			function getDay(){
 				document.getElementById("demoDay").innerHTML = x;
+			}
+			// function validateForm(){
+			// 	var y = document.forms["myForm"]["fname"].value;
+			// 	if(y == null || y == ""){
+			// 		alert("需要输入名字！");
+			// 		return false;
+			// 	}
+			// }
+			function validateForm(){
+				var x = document.forms["myForm"]["email"].value;
+				var atpos = x.indexOf("@");
+				var dotpos = x.lastIndexOf(".");
+				if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+					alert("不是一个有效的email地址");
+					return false;
+				}
 			}
 		</script>
 	</body>
